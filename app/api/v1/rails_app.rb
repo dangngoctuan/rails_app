@@ -41,7 +41,7 @@ module V1
               image_url: user.image_url
             }
           end
-          present data.to_json
+          present data
         rescue  StandardError => e
           error!(e.message, 500)
         end
@@ -53,7 +53,7 @@ module V1
         begin
           @authentication_token.delete
           data = { status: 'success' }
-          present data.to_json
+          present data
         rescue  StandardError => e
           error!(e.message, 500)
         end
